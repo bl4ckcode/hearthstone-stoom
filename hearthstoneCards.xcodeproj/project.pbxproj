@@ -9,14 +9,20 @@
 /* Begin PBXBuildFile section */
 		82CBFCF82BBD9D0A00200E5B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF72BBD9D0A00200E5B /* Tests_iOS.swift */; };
 		82CBFCFA2BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */; };
-		82CBFD042BBD9D0A00200E5B /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD032BBD9D0A00200E5B /* Tests_macOS.swift */; };
-		82CBFD062BBD9D0A00200E5B /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD052BBD9D0A00200E5B /* Tests_macOSLaunchTests.swift */; };
 		82CBFD072BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */; };
-		82CBFD082BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */; };
-		82CBFD092BBD9D0A00200E5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCE02BBD9D0700200E5B /* ContentView.swift */; };
-		82CBFD0A2BBD9D0A00200E5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCE02BBD9D0700200E5B /* ContentView.swift */; };
+		82CBFD092BBD9D0A00200E5B /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCE02BBD9D0700200E5B /* CardsListView.swift */; };
 		82CBFD0B2BBD9D0A00200E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CBFCE12BBD9D0900200E5B /* Assets.xcassets */; };
-		82CBFD0C2BBD9D0A00200E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CBFCE12BBD9D0900200E5B /* Assets.xcassets */; };
+		82CBFD202BBDA98300200E5B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD1F2BBDA98300200E5B /* Card.swift */; };
+		82CBFD222BBDAC3500200E5B /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD212BBDAC3500200E5B /* Mechanic.swift */; };
+		82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */; };
+		82CBFD272BBDB08100200E5B /* CardsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */; };
+		82CBFD2A2BBDB0F400200E5B /* HeartsthoneRapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */; };
+		82CBFD2D2BBDB1AF00200E5B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2C2BBDB1AF00200E5B /* Alamofire */; };
+		82CBFD302BBDB2CF00200E5B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2F2BBDB2CF00200E5B /* PromiseKit */; };
+		82CBFD322BBDB31200200E5B /* CardsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD312BBDB31200200E5B /* CardsListService.swift */; };
+		82CBFD352BBDB3AF00200E5B /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */; };
+		82CBFD392BBDB91400200E5B /* SingleCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */; };
+		82CBFD3B2BBDB95E00200E5B /* SingleCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,28 +33,25 @@
 			remoteGlobalIDString = 82CBFCE52BBD9D0900200E5B;
 			remoteInfo = "hearthstoneCards (iOS)";
 		};
-		82CBFD002BBD9D0A00200E5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82CBFCDA2BBD9D0600200E5B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82CBFCEB2BBD9D0900200E5B;
-			remoteInfo = "hearthstoneCards (macOS)";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearthstoneCardsApp.swift; sourceTree = "<group>"; };
-		82CBFCE02BBD9D0700200E5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82CBFCE02BBD9D0700200E5B /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
 		82CBFCE12BBD9D0900200E5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82CBFCE62BBD9D0900200E5B /* hearthstoneCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearthstoneCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		82CBFCEC2BBD9D0900200E5B /* hearthstoneCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearthstoneCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		82CBFCEE2BBD9D0900200E5B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		82CBFCF32BBD9D0900200E5B /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CBFCF72BBD9D0A00200E5B /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
-		82CBFCFF2BBD9D0A00200E5B /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		82CBFD032BBD9D0A00200E5B /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		82CBFD052BBD9D0A00200E5B /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		82CBFD1F2BBDA98300200E5B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		82CBFD212BBDAC3500200E5B /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
+		82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListInteractor.swift; sourceTree = "<group>"; };
+		82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListPresenter.swift; sourceTree = "<group>"; };
+		82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsthoneRapidService.swift; sourceTree = "<group>"; };
+		82CBFD312BBDB31200200E5B /* CardsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListService.swift; sourceTree = "<group>"; };
+		82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
+		82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardInteractor.swift; sourceTree = "<group>"; };
+		82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,24 +59,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82CBFCE92BBD9D0900200E5B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				82CBFD2D2BBDB1AF00200E5B /* Alamofire in Frameworks */,
+				82CBFD302BBDB2CF00200E5B /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		82CBFCF02BBD9D0900200E5B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82CBFCFC2BBD9D0A00200E5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,41 +77,30 @@
 		82CBFCD92BBD9D0600200E5B = {
 			isa = PBXGroup;
 			children = (
-				82CBFCDE2BBD9D0600200E5B /* Shared */,
-				82CBFCED2BBD9D0900200E5B /* macOS */,
+				82CBFCDE2BBD9D0600200E5B /* src */,
+				82CBFD1B2BBDA7D200200E5B /* Domain */,
 				82CBFCF62BBD9D0900200E5B /* Tests iOS */,
-				82CBFD022BBD9D0A00200E5B /* Tests macOS */,
 				82CBFCE72BBD9D0900200E5B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		82CBFCDE2BBD9D0600200E5B /* Shared */ = {
+		82CBFCDE2BBD9D0600200E5B /* src */ = {
 			isa = PBXGroup;
 			children = (
 				82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */,
-				82CBFCE02BBD9D0700200E5B /* ContentView.swift */,
+				82CBFCE02BBD9D0700200E5B /* CardsListView.swift */,
 				82CBFCE12BBD9D0900200E5B /* Assets.xcassets */,
 			);
-			path = Shared;
+			path = src;
 			sourceTree = "<group>";
 		};
 		82CBFCE72BBD9D0900200E5B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				82CBFCE62BBD9D0900200E5B /* hearthstoneCards.app */,
-				82CBFCEC2BBD9D0900200E5B /* hearthstoneCards.app */,
 				82CBFCF32BBD9D0900200E5B /* Tests iOS.xctest */,
-				82CBFCFF2BBD9D0A00200E5B /* Tests macOS.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		82CBFCED2BBD9D0900200E5B /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				82CBFCEE2BBD9D0900200E5B /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		82CBFCF62BBD9D0900200E5B /* Tests iOS */ = {
@@ -132,13 +112,68 @@
 			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
-		82CBFD022BBD9D0A00200E5B /* Tests macOS */ = {
+		82CBFD1B2BBDA7D200200E5B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				82CBFD032BBD9D0A00200E5B /* Tests_macOS.swift */,
-				82CBFD052BBD9D0A00200E5B /* Tests_macOSLaunchTests.swift */,
+				82CBFD332BBDB3A500200E5B /* Config */,
+				82CBFD282BBDB0E000200E5B /* Service */,
+				82CBFD1E2BBDA81700200E5B /* Scenes */,
+				82CBFD1C2BBDA7F300200E5B /* Models */,
 			);
-			path = "Tests macOS";
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		82CBFD1C2BBDA7F300200E5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD1F2BBDA98300200E5B /* Card.swift */,
+				82CBFD212BBDAC3500200E5B /* Mechanic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82CBFD1E2BBDA81700200E5B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD232BBDADCC00200E5B /* CardsListScene */,
+				82CBFD372BBDB8FA00200E5B /* SingleCardScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		82CBFD232BBDADCC00200E5B /* CardsListScene */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */,
+				82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */,
+			);
+			path = CardsListScene;
+			sourceTree = "<group>";
+		};
+		82CBFD282BBDB0E000200E5B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */,
+				82CBFD312BBDB31200200E5B /* CardsListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82CBFD332BBDB3A500200E5B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		82CBFD372BBDB8FA00200E5B /* SingleCardScene */ = {
+			isa = PBXGroup;
+			children = (
+				82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */,
+				82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */,
+			);
+			path = SingleCardScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,25 +192,12 @@
 			dependencies = (
 			);
 			name = "hearthstoneCards (iOS)";
+			packageProductDependencies = (
+				82CBFD2C2BBDB1AF00200E5B /* Alamofire */,
+				82CBFD2F2BBDB2CF00200E5B /* PromiseKit */,
+			);
 			productName = "hearthstoneCards (iOS)";
 			productReference = 82CBFCE62BBD9D0900200E5B /* hearthstoneCards.app */;
-			productType = "com.apple.product-type.application";
-		};
-		82CBFCEB2BBD9D0900200E5B /* hearthstoneCards (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82CBFD122BBD9D0A00200E5B /* Build configuration list for PBXNativeTarget "hearthstoneCards (macOS)" */;
-			buildPhases = (
-				82CBFCE82BBD9D0900200E5B /* Sources */,
-				82CBFCE92BBD9D0900200E5B /* Frameworks */,
-				82CBFCEA2BBD9D0900200E5B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "hearthstoneCards (macOS)";
-			productName = "hearthstoneCards (macOS)";
-			productReference = 82CBFCEC2BBD9D0900200E5B /* hearthstoneCards.app */;
 			productType = "com.apple.product-type.application";
 		};
 		82CBFCF22BBD9D0900200E5B /* Tests iOS */ = {
@@ -196,24 +218,6 @@
 			productReference = 82CBFCF32BBD9D0900200E5B /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		82CBFCFE2BBD9D0A00200E5B /* Tests macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82CBFD182BBD9D0A00200E5B /* Build configuration list for PBXNativeTarget "Tests macOS" */;
-			buildPhases = (
-				82CBFCFB2BBD9D0A00200E5B /* Sources */,
-				82CBFCFC2BBD9D0A00200E5B /* Frameworks */,
-				82CBFCFD2BBD9D0A00200E5B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				82CBFD012BBD9D0A00200E5B /* PBXTargetDependency */,
-			);
-			name = "Tests macOS";
-			productName = "Tests macOS";
-			productReference = 82CBFCFF2BBD9D0A00200E5B /* Tests macOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -227,16 +231,9 @@
 					82CBFCE52BBD9D0900200E5B = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					82CBFCEB2BBD9D0900200E5B = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
 					82CBFCF22BBD9D0900200E5B = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 82CBFCE52BBD9D0900200E5B;
-					};
-					82CBFCFE2BBD9D0A00200E5B = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 82CBFCEB2BBD9D0900200E5B;
 					};
 				};
 			};
@@ -249,14 +246,16 @@
 				Base,
 			);
 			mainGroup = 82CBFCD92BBD9D0600200E5B;
+			packageReferences = (
+				82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				82CBFD2E2BBDB2CF00200E5B /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = 82CBFCE72BBD9D0900200E5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				82CBFCE52BBD9D0900200E5B /* hearthstoneCards (iOS) */,
-				82CBFCEB2BBD9D0900200E5B /* hearthstoneCards (macOS) */,
 				82CBFCF22BBD9D0900200E5B /* Tests iOS */,
-				82CBFCFE2BBD9D0A00200E5B /* Tests macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -270,22 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82CBFCEA2BBD9D0900200E5B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82CBFD0C2BBD9D0A00200E5B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		82CBFCF12BBD9D0900200E5B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82CBFCFD2BBD9D0A00200E5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -299,17 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CBFD092BBD9D0A00200E5B /* ContentView.swift in Sources */,
+				82CBFD392BBDB91400200E5B /* SingleCardInteractor.swift in Sources */,
+				82CBFD092BBD9D0A00200E5B /* CardsListView.swift in Sources */,
+				82CBFD222BBDAC3500200E5B /* Mechanic.swift in Sources */,
+				82CBFD352BBDB3AF00200E5B /* UrlConstant.swift in Sources */,
+				82CBFD2A2BBDB0F400200E5B /* HeartsthoneRapidService.swift in Sources */,
+				82CBFD322BBDB31200200E5B /* CardsListService.swift in Sources */,
+				82CBFD202BBDA98300200E5B /* Card.swift in Sources */,
+				82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */,
+				82CBFD272BBDB08100200E5B /* CardsListPresenter.swift in Sources */,
 				82CBFD072BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82CBFCE82BBD9D0900200E5B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82CBFD0A2BBD9D0A00200E5B /* ContentView.swift in Sources */,
-				82CBFD082BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */,
+				82CBFD3B2BBDB95E00200E5B /* SingleCardPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,15 +306,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82CBFCFB2BBD9D0A00200E5B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82CBFD062BBD9D0A00200E5B /* Tests_macOSLaunchTests.swift in Sources */,
-				82CBFD042BBD9D0A00200E5B /* Tests_macOS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -338,11 +313,6 @@
 			isa = PBXTargetDependency;
 			target = 82CBFCE52BBD9D0900200E5B /* hearthstoneCards (iOS) */;
 			targetProxy = 82CBFCF42BBD9D0900200E5B /* PBXContainerItemProxy */;
-		};
-		82CBFD012BBD9D0A00200E5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82CBFCEB2BBD9D0900200E5B /* hearthstoneCards (macOS) */;
-			targetProxy = 82CBFD002BBD9D0A00200E5B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -398,6 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,6 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -517,58 +489,6 @@
 			};
 			name = Release;
 		};
-		82CBFD132BBD9D0A00200E5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testetecnico.hearthstoneCards;
-				PRODUCT_NAME = hearthstoneCards;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		82CBFD142BBD9D0A00200E5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testetecnico.hearthstoneCards;
-				PRODUCT_NAME = hearthstoneCards;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		82CBFD162BBD9D0A00200E5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -608,42 +528,6 @@
 			};
 			name = Release;
 		};
-		82CBFD192BBD9D0A00200E5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.testetecnico.Tests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "hearthstoneCards (macOS)";
-			};
-			name = Debug;
-		};
-		82CBFD1A2BBD9D0A00200E5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.7;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.testetecnico.Tests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "hearthstoneCards (macOS)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -665,15 +549,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82CBFD122BBD9D0A00200E5B /* Build configuration list for PBXNativeTarget "hearthstoneCards (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82CBFD132BBD9D0A00200E5B /* Debug */,
-				82CBFD142BBD9D0A00200E5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		82CBFD152BBD9D0A00200E5B /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -683,16 +558,39 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82CBFD182BBD9D0A00200E5B /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82CBFD192BBD9D0A00200E5B /* Debug */,
-				82CBFD1A2BBD9D0A00200E5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		82CBFD2E2BBDB2CF00200E5B /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82CBFD2C2BBDB1AF00200E5B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		82CBFD2F2BBDB2CF00200E5B /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82CBFD2E2BBDB2CF00200E5B /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82CBFCDA2BBD9D0600200E5B /* Project object */;
 }
