@@ -1,8 +1,8 @@
 //
-//  ContentView.swift
-//  Shared
+//  GameCardView.swift
+//  hearthstoneCards (iOS)
 //
-//  Created by Carlos alves on 03/04/24.
+//  Created by Carlos alves on 05/04/24.
 //
 
 import SwiftUI
@@ -60,17 +60,3 @@ struct GameCardView: UIViewRepresentable {
         uiView.image.image = image
     }
 }
-
-struct CardsList: View {
-    var body: some View {
-        VStack {
-            GameCardView(text: .constant(""), image: .constant(UIImage(systemName: "star")))
-        }
-    }
-}
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}

@@ -8,18 +8,29 @@
 import PromiseKit
 import Foundation
 
-class CardsService {
+protocol CardsServiceProtocol {
+    func getCardsList() -> Promise<CardResponse>
+    func singleCard(for id: String) -> Promise<Card>
+}
+
+final class CardsService: CardsServiceProtocol {
     private var httpService: BaseService
 
     init() {
         self.httpService = HeartsthoneRapidService()
     }
 
-    func getCardsList() -> Promise<[Card]> {
-        let url = UrlConstant.cardsList()
-        return httpService.get(url: url).map { data in
-            let cards: [Card] = try! JSONDecoder().decode([Card].self, from: data)
-            return cards
+    private var cardResponseCache: Promise<CardResponse>?
+    func getCardsList() -> Promise<CardResponse> {
+        if let cardResponseCache = self.cardResponseCache {
+            return cardResponseCache
+        } else {
+            let url = UrlConstant.cardsList()
+            cardResponseCache = httpService.get(url: url).map { data in
+                let cards: CardResponse = try! JSONDecoder().decode(CardResponse.self, from: data)
+                return cards
+            }
+            return cardResponseCache!
         }
     }
     
