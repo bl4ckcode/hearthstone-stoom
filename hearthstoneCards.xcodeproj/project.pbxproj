@@ -12,6 +12,7 @@
 		82555DC12BC0A6BC0060D7A7 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DC02BC0A6BC0060D7A7 /* ImageExtension.swift */; };
 		82555DC52BC15F2B0060D7A7 /* SingleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */; };
 		82555DC82BC169030060D7A7 /* TTProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 82555DC72BC169030060D7A7 /* TTProgressHUD */; };
+		826995AF2BC18C530038DB80 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826995AE2BC18C530038DB80 /* CustomProgressView.swift */; };
 		82901FE92BC0403F00C8724C /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82901FE82BC0403F00C8724C /* GameCardView.swift */; };
 		82CBFCF82BBD9D0A00200E5B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF72BBD9D0A00200E5B /* Tests_iOS.swift */; };
 		82CBFCFA2BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */; };
@@ -19,7 +20,7 @@
 		82CBFD092BBD9D0A00200E5B /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCE02BBD9D0700200E5B /* CardsListView.swift */; };
 		82CBFD0B2BBD9D0A00200E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CBFCE12BBD9D0900200E5B /* Assets.xcassets */; };
 		82CBFD202BBDA98300200E5B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD1F2BBDA98300200E5B /* Card.swift */; };
-		82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */; };
+		82CBFD252BBDADF400200E5B /* CardsListSceneLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD242BBDADF400200E5B /* CardsListSceneLogic.swift */; };
 		82CBFD2A2BBDB0F400200E5B /* HeartsthoneRapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */; };
 		82CBFD2D2BBDB1AF00200E5B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2C2BBDB1AF00200E5B /* Alamofire */; };
 		82CBFD302BBDB2CF00200E5B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2F2BBDB2CF00200E5B /* PromiseKit */; };
@@ -42,6 +43,7 @@
 		82555DBE2BC0A5720060D7A7 /* CardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUI.swift; sourceTree = "<group>"; };
 		82555DC02BC0A6BC0060D7A7 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardView.swift; sourceTree = "<group>"; };
+		826995AE2BC18C530038DB80 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		82901FE82BC0403F00C8724C /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearthstoneCardsApp.swift; sourceTree = "<group>"; };
 		82CBFCE02BBD9D0700200E5B /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		82CBFCF72BBD9D0A00200E5B /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		82CBFD1F2BBDA98300200E5B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListInteractor.swift; sourceTree = "<group>"; };
+		82CBFD242BBDADF400200E5B /* CardsListSceneLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListSceneLogic.swift; sourceTree = "<group>"; };
 		82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsthoneRapidService.swift; sourceTree = "<group>"; };
 		82CBFD312BBDB31200200E5B /* CardsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListService.swift; sourceTree = "<group>"; };
 		82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				82CBFCE02BBD9D0700200E5B /* CardsListView.swift */,
 				82901FE82BC0403F00C8724C /* GameCardView.swift */,
 				82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */,
+				826995AE2BC18C530038DB80 /* CustomProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,7 +178,7 @@
 		82CBFD232BBDADCC00200E5B /* CardsListScene */ = {
 			isa = PBXGroup;
 			children = (
-				82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */,
+				82CBFD242BBDADF400200E5B /* CardsListSceneLogic.swift */,
 			);
 			path = CardsListScene;
 			sourceTree = "<group>";
@@ -312,8 +315,9 @@
 				82CBFD2A2BBDB0F400200E5B /* HeartsthoneRapidService.swift in Sources */,
 				82CBFD322BBDB31200200E5B /* CardsListService.swift in Sources */,
 				82CBFD202BBDA98300200E5B /* Card.swift in Sources */,
-				82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */,
+				82CBFD252BBDADF400200E5B /* CardsListSceneLogic.swift in Sources */,
 				82555DC52BC15F2B0060D7A7 /* SingleCardView.swift in Sources */,
+				826995AF2BC18C530038DB80 /* CustomProgressView.swift in Sources */,
 				82555DBD2BC0A42A0060D7A7 /* ImageHelper.swift in Sources */,
 				82555DBF2BC0A5720060D7A7 /* CardUI.swift in Sources */,
 				82CBFD072BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */,

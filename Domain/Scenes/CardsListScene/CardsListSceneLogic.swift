@@ -17,25 +17,25 @@ final class CardsListInteractor: ObservableObject {
     
     private var allCards: [Card] = []
     
-    @Published var presenter: CardsListPresenter
-    
     @Published var cardsForView: [CardUI] = []
+    @Published var isLoading = true
     
-    init(presenter: CardsListPresenter, service: CardsService = CardsService()) {
-        self.presenter = presenter
+    init(service: CardsService = CardsService()) {
         self.cardsService = service
     }
     
-    func getCardsList() {
+    func getCardsList() {        
         self.cardsService
             .getCardsList()
             .done { [weak self] response in
                 guard let self = self else { return }
+                
+                self.isLoading = false
+                
                 // Credit/JSONAny nao estao sendo utilizado pois a maioria dos cards sao AsheOfOutland mas foram mapeados pois constavam em All cards
-                // Pegando apenas os 1000 primeiros cards de cada tipo pois há quase 30k cards, isso elevaria muito o custo da memória
                 if self.allCards.isEmpty {
                     let array = response.mergeAshesOfOutland()
-                    array.prefix(1000).forEach { asheOfOutland in
+                    array.forEach { asheOfOutland in
                         let cardsConverted = asheOfOutland.map { Card(from: $0) }
                         self.allCards.append(contentsOf: cardsConverted)
                         }
@@ -60,14 +60,5 @@ final class CardsListInteractor: ObservableObject {
     
     func getCardFromID(id: String) -> Card? {
         return self.allCards.first { $0.cardId == id }
-    }
-}
-
-final class CardsListPresenter: ObservableObject {
-    @Published var cardsForView: [CardUI] = []
-    @Published var isLoading = false
-    
-    func mapUiCards(cards: [CardUI]) {
-        self.cardsForView.append(contentsOf: cards)
     }
 }

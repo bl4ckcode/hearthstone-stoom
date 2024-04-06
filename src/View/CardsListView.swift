@@ -13,23 +13,30 @@ struct CardsList: View {
     @ObservedObject var cardsListInteractor: CardsListInteractor
         
     var body: some View {
-        NavigationView {
-            List(cardsListInteractor.cardsForView) { card in
-                NavigationLink(destination: createDetailCardView(id: card.cardId)) {
-                    GameCardView(text: .constant(card.text),
-                             imageUrl: .constant(card.img))
-                    .frame(height: 150)
-                    .onAppear {
-                        if let lastId = cardsListInteractor.cardsForView.last?.id , card.id == lastId {
-                            cardsListInteractor.getCardsList()
+        VStack {
+            if !cardsListInteractor.isLoading {
+                NavigationView {
+                    List(cardsListInteractor.cardsForView) { card in
+                        NavigationLink(destination: createDetailCardView(id: card.cardId)) {
+                            GameCardView(text: .constant(card.text),
+                                     imageUrl: .constant(card.img))
+                            .frame(height: 150)
+                            .onAppear {
+                                if let lastId = cardsListInteractor.cardsForView.last?.id , card.id == lastId {
+                                    hudVisible.toggle()
+                                    cardsListInteractor.getCardsList()
+                                }
+                            }
                         }
                     }
+                    .navigationTitle("Cards Hearthstone")
                 }
+            } else {
+                CustomProgressView(hudVisible: $hudVisible)
+                    .onAppear {
+                        cardsListInteractor.getCardsList()
+                    }
             }
-            .onAppear {
-                cardsListInteractor.getCardsList()
-            }
-            .navigationTitle("Cards Hearthstone")
         }
     }
     

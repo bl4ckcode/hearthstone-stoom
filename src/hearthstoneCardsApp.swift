@@ -16,7 +16,7 @@ struct hearthstoneCardsApp: App {
     }
     
     func createCardsListView() -> CardsList {
-        let interactor = CardsListInteractor(presenter: CardsListPresenter())
+        let interactor = CardsListInteractor()
         var view =  CardsList(cardsListInteractor: interactor)
         view.cardsListInteractor = interactor
         
