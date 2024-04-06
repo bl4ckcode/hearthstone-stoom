@@ -12,18 +12,21 @@ protocol CardsListProtocol: AnyObject {
 }
 
 struct CardsList: View {
-    @State var cards: [CardUI] = []
-    @State private var isLoading = false
-    @State private var isFinished = false
+    @State var isLoading = false
+    @State var isFinished = false
     
-    @StateObject var cardsListInteractor: CardsListInteractor = CardsListInteractor()
+    @ObservedObject var cardsListInteractor: CardsListInteractor = CardsListInteractor()
+    
+    init() {
+        cardsListInteractor.presenter = CardsListPresenter(view: self)
+    }
         
     var body: some View {
         NavigationView {
-            List {
-                ForEach(cards, id: \.id) { card in
-                    GameCardView(text: .constant("\(card.text ?? "Hearthstone Card")"), image: .constant(UIImage(systemName: "star")))
-                }
+            List(cardsListInteractor.cardsForView) { card in
+                GameCardView(text: .constant(card.text),
+                             imageUrl: .constant(card.img))
+                    .frame(height: 150)
             }
             if !isFinished {
                 ProgressView()
@@ -31,29 +34,14 @@ struct CardsList: View {
                     .foregroundColor(.orange)
                     .foregroundColor(.cyan)
                     .onAppear {
-                        loadMoreContent()
+                        if !isLoading {
+                            isLoading = true
+                            cardsListInteractor.getCardsList()
+                        }
                     }
             }
         }
-        .navigationTitle("Hearsthstone All Cards 2024")
-        .onAppear {
-            self.cardsListInteractor.presenter = CardsListPresenter(view: self)
-        }
-    }
-    
-    func loadMoreContent() {
-        if !isLoading {
-            isLoading = true
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                cardsListInteractor.getCardsList()
-                isLoading = false
-                
-                if cards.count > 1000 {
-                    isFinished = true
-                }
-            }
-        }
+        .navigationTitle("Todos Cards Hearthstone 2024!")
     }
 }
 

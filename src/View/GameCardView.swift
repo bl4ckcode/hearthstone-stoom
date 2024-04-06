@@ -27,20 +27,18 @@ final class GameCard: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
         let labelConstraints = [
-            label.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            label.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor),
-            label.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor),
-            label.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)
+            label.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
+            label.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 8),
+            label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 8),
+            label.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ]
         
         image.translatesAutoresizingMaskIntoConstraints = false
         let imageConstraints = [
-            image.topAnchor.constraint(equalTo: label.bottomAnchor),
-            image.centerXAnchor.constraint(equalTo: label.centerXAnchor),
-            image.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            image.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            image.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            image.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 8)
         ]
         
         NSLayoutConstraint.activate(labelConstraints + imageConstraints)
@@ -49,14 +47,24 @@ final class GameCard: UIView {
 
 struct GameCardView: UIViewRepresentable {
     @Binding var text: String
-    @Binding var image: UIImage?
+    @Binding var imageUrl: String?
     
     func makeUIView(context: Context) -> GameCard {
         GameCard()
     }
     
     func updateUIView(_ uiView: GameCard, context: Context) {
+        uiView.label.translatesAutoresizingMaskIntoConstraints = false
+        uiView.label.textAlignment = .left
+        uiView.label.numberOfLines = 0
+        uiView.label.font = .systemFont(ofSize: 17, weight: .heavy)
         uiView.label.text = text
-        uiView.image.image = image
+
+        if let imageUrl = imageUrl {
+            UIImage.from(imageUrl, sizeOfResize: CGSize(width: 80, height: 120)) { image in
+                uiView.image.image = image
+                uiView.image.contentMode = .center
+            }
+        }
     }
 }

@@ -22,4 +22,8 @@ struct UrlConstant {
     static func singleCard(id: String) -> String {
         return "\(UrlConstant.HOST)/cards/\(id)"
     }
+    
+    static let default_img_url = "https://cdn.hearthstonetopdecks.com/wp-content/uploads/2014/06/card-back-default-201x300.png"
+    
+    static let default_text_card = "Esse card não possui texto, perdoe-me ;("
 }

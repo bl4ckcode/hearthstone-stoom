@@ -640,10 +640,3 @@ struct Card: Codable {
         self.durability = ashesOutOfLand.durability
     }
 }
-
-struct CardUI: Identifiable {
-    var id: ObjectIdentifier
-    var img: String?
-    var flavor: String?
-    var text: String?
-}
