@@ -7,46 +7,44 @@
 
 import SwiftUI
 
-protocol CardsListProtocol: AnyObject {
-    func setCardsData(cards: [CardUI])
-}
-
 struct CardsList: View {
     @State var isLoading = false
-    @State var isFinished = false
-    
-    @ObservedObject var cardsListInteractor: CardsListInteractor = CardsListInteractor()
-    
-    init() {
-        cardsListInteractor.presenter = CardsListPresenter(view: self)
-    }
+    @ObservedObject var cardsListInteractor: CardsListInteractor
         
     var body: some View {
         NavigationView {
-            List(cardsListInteractor.cardsForView) { card in
+            List(cardsListInteractor.cardsForView, id: \.id) { card in
+                if !isLoading {
+                    ProgressView(label: {
+                        Text("Carregando as cartas ;) Isso pode demorar um pouco...")
+                            .font(.caption)
+                    })
+                        .hoverEffect()
+                }
                 GameCardView(text: .constant(card.text),
-                             imageUrl: .constant(card.img))
-                    .frame(height: 150)
-            }
-            if !isFinished {
-                ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .foregroundColor(.orange)
-                    .foregroundColor(.cyan)
-                    .onAppear {
-                        if !isLoading {
-                            isLoading = true
-                            cardsListInteractor.getCardsList()
-                        }
+                         imageUrl: .constant(card.img))
+                .frame(height: 150)
+                .onAppear {
+                    if let lastId = cardsListInteractor.cardsForView.last?.id , card.id == lastId {
+                        cardsListInteractor.getCardsList()
                     }
+                }
             }
+            .onAppear {
+                cardsListInteractor.getCardsList()
+            }
+            .navigationTitle("Cards Hearthstone")
         }
-        .navigationTitle("Todos Cards Hearthstone 2024!")
     }
+
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+extension View {
+    @ViewBuilder func isHidden(_ isHidden: Bool) -> some View {
+        if isHidden {
+            self.hidden()
+        } else {
+            self
+        }
+    }
+}

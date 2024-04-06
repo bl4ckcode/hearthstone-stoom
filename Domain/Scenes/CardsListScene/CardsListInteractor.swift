@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class CardsListInteractor: ObservableObject {
-    var presenter: CardsListPresenter?
+    weak var presenter: CardsListPresenter?
     private let cardsService: CardsServiceProtocol
     
     private var startIndex = 0
@@ -17,7 +17,7 @@ final class CardsListInteractor: ObservableObject {
     
     private var allCards: [Card] = []
     
-    @Published var cardsForView: [CardUI] = [CardUI(id: ObjectIdentifier(UUID().uuidString as AnyObject), img: UrlConstant.default_img_url, text: "Carregando mais de 20 mil cards!")]
+    @Published var cardsForView: [CardUI] = []
     
     init(service: CardsService = CardsService()) {
         self.cardsService = service
@@ -28,12 +28,11 @@ final class CardsListInteractor: ObservableObject {
             .getCardsList()
             .done { [weak self] response in
                 guard let self = self else { return }
-                
                 // Credit/JSONAny nao estao sendo utilizado pois a maioria dos cards sao AsheOfOutland mas foram mapeados pois constavam em All cards
-                // Pegando apenas os 100 primeiros cards de cada tipo pois há quase 30k cards, isso elevaria muito o custo da memória
+                // Pegando apenas os 1000 primeiros cards de cada tipo pois há quase 30k cards, isso elevaria muito o custo da memória
                 if self.allCards.isEmpty {
                     let array = response.mergeAshesOfOutland()
-                    array.prefix(10000).forEach { asheOfOutland in
+                    array.prefix(1000).forEach { asheOfOutland in
                         let cardsConverted = asheOfOutland.map { Card(from: $0) }
                         self.allCards.append(contentsOf: cardsConverted)
                         }
@@ -41,6 +40,9 @@ final class CardsListInteractor: ObservableObject {
                     if self.endIndex < self.allCards.count {
                         self.startIndex = self.endIndex
                         self.endIndex += 100
+                    } else {
+                        self.presenter?.updateView()
+                        return
                     }
                 }
                 

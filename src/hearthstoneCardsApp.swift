@@ -11,7 +11,18 @@ import SwiftUI
 struct hearthstoneCardsApp: App {
     var body: some Scene {
         WindowGroup {
-            CardsList()
+            createCardsListView()
         }
+    }
+    
+    func createCardsListView() -> CardsList {
+        let interactor = CardsListInteractor()
+        var view =  CardsList(cardsListInteractor: interactor)
+        view.cardsListInteractor = interactor
+        let presenter = CardsListPresenter(view: view)
+        presenter.view = view
+        interactor.presenter = presenter
+        
+        return view
     }
 }

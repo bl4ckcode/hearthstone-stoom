@@ -7,16 +7,20 @@
 
 import Combine
 import Foundation
+import SwiftUI
 
 final class CardsListPresenter: ObservableObject {
-    var view: CardsList
+    @Published var cardsForView: [CardUI] = []
+    
+    var view: CardsList?
     
     init(view: CardsList) {
         self.view = view
     }
     
     func updateView() {
-        view.isLoading = false
-        view.isFinished = true
+        DispatchQueue.main.async {
+            view?.isLoading = false
+        }
     }
 }

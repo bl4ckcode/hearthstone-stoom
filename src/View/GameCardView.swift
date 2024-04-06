@@ -27,14 +27,16 @@ final class GameCard: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
+        label.translatesAutoresizingMaskIntoConstraints = false
+        image.translatesAutoresizingMaskIntoConstraints = false
+
         let labelConstraints = [
             label.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
             label.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 8),
             label.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 8),
-            label.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)
+            label.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
         ]
         
-        image.translatesAutoresizingMaskIntoConstraints = false
         let imageConstraints = [
             image.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             image.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
@@ -54,8 +56,7 @@ struct GameCardView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: GameCard, context: Context) {
-        uiView.label.translatesAutoresizingMaskIntoConstraints = false
-        uiView.label.textAlignment = .left
+        uiView.label.textAlignment = .center
         uiView.label.numberOfLines = 0
         uiView.label.font = .systemFont(ofSize: 17, weight: .heavy)
         uiView.label.text = text
