@@ -57,7 +57,7 @@ struct GameCardView: UIViewRepresentable {
     
     func updateUIView(_ uiView: GameCard, context: Context) {
         uiView.label.textAlignment = .center
-        uiView.label.numberOfLines = 0
+        uiView.label.lineBreakMode = .byTruncatingTail
         uiView.label.font = .systemFont(ofSize: 17, weight: .heavy)
         uiView.label.text = text
 

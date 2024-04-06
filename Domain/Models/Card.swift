@@ -631,10 +631,10 @@ struct Card: Codable {
         self.attack = ashesOutOfLand.attack
         self.cost = ashesOutOfLand.cost
         self.health = ashesOutOfLand.health
-        self.text = ashesOutOfLand.text
+        self.text = ashesOutOfLand.text?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
         self.flavor = ashesOutOfLand.flavor
         self.cardSet = ashesOutOfLand.cardSet?.rawValue
-        self.mechanics = ashesOutOfLand.mechanics?.reduce("", { $0 + "\($1.name?.rawValue ?? ""), " })
+        self.mechanics = ashesOutOfLand.mechanics?.reduce("", { $0 + "\($1.name?.rawValue ?? "")" })
         self.playerClass = ashesOutOfLand.playerClass?.rawValue
         self.spellSchool = ashesOutOfLand.spellSchool?.rawValue
         self.durability = ashesOutOfLand.durability

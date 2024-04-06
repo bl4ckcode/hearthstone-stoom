@@ -9,6 +9,7 @@ import Foundation
 
 struct CardUI: Identifiable {
     let id: ObjectIdentifier
+    var cardId: String
     var img: String
     var text: String
 }

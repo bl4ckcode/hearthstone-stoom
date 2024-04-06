@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class CardsListInteractor: ObservableObject {
-    weak var presenter: CardsListPresenter?
+    
     private let cardsService: CardsServiceProtocol
     
     private var startIndex = 0
@@ -17,9 +17,12 @@ final class CardsListInteractor: ObservableObject {
     
     private var allCards: [Card] = []
     
+    @Published var presenter: CardsListPresenter
+    
     @Published var cardsForView: [CardUI] = []
     
-    init(service: CardsService = CardsService()) {
+    init(presenter: CardsListPresenter, service: CardsService = CardsService()) {
+        self.presenter = presenter
         self.cardsService = service
     }
     
@@ -41,18 +44,30 @@ final class CardsListInteractor: ObservableObject {
                         self.startIndex = self.endIndex
                         self.endIndex += 100
                     } else {
-                        self.presenter?.updateView()
                         return
                     }
                 }
                 
-                self.cardsForView.append(contentsOf: self.allCards[self.startIndex...self.endIndex].map {
-                    CardUI(id: ObjectIdentifier(($0.cardId ?? "") as AnyObject), img: $0.img ?? UrlConstant.default_img_url, text: $0.name ?? UrlConstant.default_text_card) })
-                
-                self.presenter?.updateView()
+                if !self.allCards.isEmpty {
+                    self.cardsForView.append(contentsOf: self.allCards[self.startIndex...self.endIndex].map {
+                        CardUI(id: ObjectIdentifier(($0.cardId ?? "") as AnyObject), cardId: $0.cardId ?? "",img: $0.img ?? UrlConstant.default_img_url, text: $0.name ?? UrlConstant.default_text_card) })
+                }
             }
             .catch { error in
                 print(error)
             }
+    }
+    
+    func getCardFromID(id: String) -> Card? {
+        return self.allCards.first { $0.cardId == id }
+    }
+}
+
+final class CardsListPresenter: ObservableObject {
+    @Published var cardsForView: [CardUI] = []
+    @Published var isLoading = false
+    
+    func mapUiCards(cards: [CardUI]) {
+        self.cardsForView.append(contentsOf: cards)
     }
 }

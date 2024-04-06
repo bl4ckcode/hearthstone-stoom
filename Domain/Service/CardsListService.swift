@@ -10,7 +10,7 @@ import Foundation
 
 protocol CardsServiceProtocol {
     func getCardsList() -> Promise<CardResponse>
-    func singleCard(for id: String) -> Promise<Card>
+    func singleCard(for id: String) -> Promise<AshesOfOutland>
 }
 
 final class CardsService: CardsServiceProtocol {
@@ -34,11 +34,11 @@ final class CardsService: CardsServiceProtocol {
         }
     }
     
-    func singleCard(for id: String) -> Promise<Card>  {
+    func singleCard(for id: String) -> Promise<AshesOfOutland>  {
         let url = UrlConstant.singleCard(id: id)
         return httpService.get(url: url).map { data in
-            let cards: Card = try! JSONDecoder().decode(Card.self, from: data)
-            return cards
+            let ashesOfOutland: AshesOfOutland = try! JSONDecoder().decode(AshesOfOutland.self, from: data)
+            return ashesOfOutland
         }
     }
 }

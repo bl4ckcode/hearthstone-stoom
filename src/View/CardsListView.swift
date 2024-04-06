@@ -6,27 +6,23 @@
 //
 
 import SwiftUI
+import TTProgressHUD
 
 struct CardsList: View {
-    @State var isLoading = false
+    @State var hudVisible = true
     @ObservedObject var cardsListInteractor: CardsListInteractor
         
     var body: some View {
         NavigationView {
-            List(cardsListInteractor.cardsForView, id: \.id) { card in
-                if !isLoading {
-                    ProgressView(label: {
-                        Text("Carregando as cartas ;) Isso pode demorar um pouco...")
-                            .font(.caption)
-                    })
-                        .hoverEffect()
-                }
-                GameCardView(text: .constant(card.text),
-                         imageUrl: .constant(card.img))
-                .frame(height: 150)
-                .onAppear {
-                    if let lastId = cardsListInteractor.cardsForView.last?.id , card.id == lastId {
-                        cardsListInteractor.getCardsList()
+            List(cardsListInteractor.cardsForView) { card in
+                NavigationLink(destination: createDetailCardView(id: card.cardId)) {
+                    GameCardView(text: .constant(card.text),
+                             imageUrl: .constant(card.img))
+                    .frame(height: 150)
+                    .onAppear {
+                        if let lastId = cardsListInteractor.cardsForView.last?.id , card.id == lastId {
+                            cardsListInteractor.getCardsList()
+                        }
                     }
                 }
             }
@@ -36,15 +32,13 @@ struct CardsList: View {
             .navigationTitle("Cards Hearthstone")
         }
     }
-
-}
-
-extension View {
-    @ViewBuilder func isHidden(_ isHidden: Bool) -> some View {
-        if isHidden {
-            self.hidden()
+    
+    func createDetailCardView(id: String) -> AnyView {
+        if let card = cardsListInteractor.getCardFromID(id: id) {
+            return AnyView(SingleCard(card: card))
         } else {
-            self
+            return AnyView(EmptyView())
         }
     }
+
 }

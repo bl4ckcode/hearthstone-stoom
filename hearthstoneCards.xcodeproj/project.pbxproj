@@ -10,6 +10,8 @@
 		82555DBD2BC0A42A0060D7A7 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DBC2BC0A42A0060D7A7 /* ImageHelper.swift */; };
 		82555DBF2BC0A5720060D7A7 /* CardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DBE2BC0A5720060D7A7 /* CardUI.swift */; };
 		82555DC12BC0A6BC0060D7A7 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DC02BC0A6BC0060D7A7 /* ImageExtension.swift */; };
+		82555DC52BC15F2B0060D7A7 /* SingleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */; };
+		82555DC82BC169030060D7A7 /* TTProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 82555DC72BC169030060D7A7 /* TTProgressHUD */; };
 		82901FE92BC0403F00C8724C /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82901FE82BC0403F00C8724C /* GameCardView.swift */; };
 		82CBFCF82BBD9D0A00200E5B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF72BBD9D0A00200E5B /* Tests_iOS.swift */; };
 		82CBFCFA2BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */; };
@@ -18,14 +20,11 @@
 		82CBFD0B2BBD9D0A00200E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82CBFCE12BBD9D0900200E5B /* Assets.xcassets */; };
 		82CBFD202BBDA98300200E5B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD1F2BBDA98300200E5B /* Card.swift */; };
 		82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */; };
-		82CBFD272BBDB08100200E5B /* CardsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */; };
 		82CBFD2A2BBDB0F400200E5B /* HeartsthoneRapidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */; };
 		82CBFD2D2BBDB1AF00200E5B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2C2BBDB1AF00200E5B /* Alamofire */; };
 		82CBFD302BBDB2CF00200E5B /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 82CBFD2F2BBDB2CF00200E5B /* PromiseKit */; };
 		82CBFD322BBDB31200200E5B /* CardsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD312BBDB31200200E5B /* CardsListService.swift */; };
 		82CBFD352BBDB3AF00200E5B /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */; };
-		82CBFD392BBDB91400200E5B /* SingleCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */; };
-		82CBFD3B2BBDB95E00200E5B /* SingleCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +41,7 @@
 		82555DBC2BC0A42A0060D7A7 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		82555DBE2BC0A5720060D7A7 /* CardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUI.swift; sourceTree = "<group>"; };
 		82555DC02BC0A6BC0060D7A7 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardView.swift; sourceTree = "<group>"; };
 		82901FE82BC0403F00C8724C /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		82CBFCDF2BBD9D0700200E5B /* hearthstoneCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearthstoneCardsApp.swift; sourceTree = "<group>"; };
 		82CBFCE02BBD9D0700200E5B /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
@@ -52,12 +52,9 @@
 		82CBFCF92BBD9D0A00200E5B /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		82CBFD1F2BBDA98300200E5B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListInteractor.swift; sourceTree = "<group>"; };
-		82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListPresenter.swift; sourceTree = "<group>"; };
 		82CBFD292BBDB0F400200E5B /* HeartsthoneRapidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsthoneRapidService.swift; sourceTree = "<group>"; };
 		82CBFD312BBDB31200200E5B /* CardsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListService.swift; sourceTree = "<group>"; };
 		82CBFD342BBDB3AF00200E5B /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
-		82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardInteractor.swift; sourceTree = "<group>"; };
-		82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82555DC82BC169030060D7A7 /* TTProgressHUD in Frameworks */,
 				82CBFD2D2BBDB1AF00200E5B /* Alamofire in Frameworks */,
 				82CBFD302BBDB2CF00200E5B /* PromiseKit in Frameworks */,
 			);
@@ -85,6 +83,7 @@
 			children = (
 				82CBFCE02BBD9D0700200E5B /* CardsListView.swift */,
 				82901FE82BC0403F00C8724C /* GameCardView.swift */,
+				82555DC42BC15F2A0060D7A7 /* SingleCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				82CBFD232BBDADCC00200E5B /* CardsListScene */,
-				82CBFD372BBDB8FA00200E5B /* SingleCardScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -178,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				82CBFD242BBDADF400200E5B /* CardsListInteractor.swift */,
-				82CBFD262BBDB08100200E5B /* CardsListPresenter.swift */,
 			);
 			path = CardsListScene;
 			sourceTree = "<group>";
@@ -200,15 +197,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		82CBFD372BBDB8FA00200E5B /* SingleCardScene */ = {
-			isa = PBXGroup;
-			children = (
-				82CBFD382BBDB91400200E5B /* SingleCardInteractor.swift */,
-				82CBFD3A2BBDB95E00200E5B /* SingleCardPresenter.swift */,
-			);
-			path = SingleCardScene;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +216,7 @@
 			packageProductDependencies = (
 				82CBFD2C2BBDB1AF00200E5B /* Alamofire */,
 				82CBFD2F2BBDB2CF00200E5B /* PromiseKit */,
+				82555DC72BC169030060D7A7 /* TTProgressHUD */,
 			);
 			productName = "hearthstoneCards (iOS)";
 			productReference = 82CBFCE62BBD9D0900200E5B /* hearthstoneCards.app */;
@@ -282,6 +271,7 @@
 			packageReferences = (
 				82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				82CBFD2E2BBDB2CF00200E5B /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				82555DC62BC169030060D7A7 /* XCRemoteSwiftPackageReference "TTProgressHUD" */,
 			);
 			productRefGroup = 82CBFCE72BBD9D0900200E5B /* Products */;
 			projectDirPath = "";
@@ -316,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CBFD392BBDB91400200E5B /* SingleCardInteractor.swift in Sources */,
 				82CBFD092BBD9D0A00200E5B /* CardsListView.swift in Sources */,
 				82CBFD352BBDB3AF00200E5B /* UrlConstant.swift in Sources */,
 				82901FE92BC0403F00C8724C /* GameCardView.swift in Sources */,
@@ -324,11 +313,10 @@
 				82CBFD322BBDB31200200E5B /* CardsListService.swift in Sources */,
 				82CBFD202BBDA98300200E5B /* Card.swift in Sources */,
 				82CBFD252BBDADF400200E5B /* CardsListInteractor.swift in Sources */,
+				82555DC52BC15F2B0060D7A7 /* SingleCardView.swift in Sources */,
 				82555DBD2BC0A42A0060D7A7 /* ImageHelper.swift in Sources */,
 				82555DBF2BC0A5720060D7A7 /* CardUI.swift in Sources */,
-				82CBFD272BBDB08100200E5B /* CardsListPresenter.swift in Sources */,
 				82CBFD072BBD9D0A00200E5B /* hearthstoneCardsApp.swift in Sources */,
-				82CBFD3B2BBDB95E00200E5B /* SingleCardPresenter.swift in Sources */,
 				82555DC12BC0A6BC0060D7A7 /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +585,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		82555DC62BC169030060D7A7 /* XCRemoteSwiftPackageReference "TTProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/honkmaster/TTProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 		82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -616,6 +612,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		82555DC72BC169030060D7A7 /* TTProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82555DC62BC169030060D7A7 /* XCRemoteSwiftPackageReference "TTProgressHUD" */;
+			productName = TTProgressHUD;
+		};
 		82CBFD2C2BBDB1AF00200E5B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 82CBFD2B2BBDB1AF00200E5B /* XCRemoteSwiftPackageReference "Alamofire" */;
